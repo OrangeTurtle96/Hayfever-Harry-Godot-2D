@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bnlvgjrcy06bx"]
+
+[ext_resource type="Texture2D" uid="uid://ber2xbkj143sm" path="res://art/Pixelart-Icons-16x16px_by_AxulArt/Icon-Set-RPG_by_AxulArt.png" id="1_irabu"]
+[ext_resource type="Script" path="res://attack.gd" id="2_nrfp6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5spx"]
+atlas = ExtResource("1_irabu")
+region = Rect2(80, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rbg4"]
+atlas = ExtResource("1_irabu")
+region = Rect2(96, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glvu7"]
+atlas = ExtResource("1_irabu")
+region = Rect2(112, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq3q4"]
+atlas = ExtResource("1_irabu")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mnvx7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5spx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rbg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_glvu7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq3q4")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b01wn"]
+size = Vector2(16, 16)
+
+[node name="Attack" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mnvx7")
+frame = 3
+frame_progress = 1.0
+script = ExtResource("2_nrfp6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_b01wn")
+
+[connection signal="animation_finished" from="." to="." method="_on_animation_finished"]

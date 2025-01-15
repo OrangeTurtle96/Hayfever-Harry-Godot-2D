@@ -1,0 +1,25 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1736979267
+attack.gd::GDScript::-1::1736968876::0::1::::<>AnimatedSprite2D<>::
+attack.tscn::PackedScene::3322870076989492477::1736978896::0::1::::<><>::uid://ber2xbkj143sm::::res://art/Pixelart-Icons-16x16px_by_AxulArt/Icon-Set-RPG_by_AxulArt.png<>res://attack.gd
+icon.svg::CompressedTexture2D::3115595973457291076::1735221226::1736979268::1::::<><>::
+player.gd::GDScript::-1::1736978892::0::1::::<>CharacterBody2D<>::
+player.tscn::PackedScene::2202508870285391189::1736978896::0::1::::<><>::uid://5d6p85dewpa2::::res://art/Small-8-Direction-Characters_by_AxulArt/Small-8-Direction-Characters_by_AxulArt.png<>res://player.gd
+README.md::TextFile::-1::1736979147::0::1::::<><>::
+tileset.tres::TileSet::5526337649436252572::1736029733::0::1::::<><>::uid://bevsju1xg442t::::res://art/AxulArt's_BasicPlains-Tileset_ver.2_by_AxulArt/BasicPlains-tileset-Ver.2-ALL_by_AxulArt.png<>uid://b52nfh0e8erxi::::res://art/AxulArt's_BasicPlains-Tileset_ver.2_by_AxulArt/BasicPlains-tileset-Ver.2_by_AxulArt.png<>uid://kbfbea4uxh3p::::res://art/AxulArt's Beach-and-caves-tileset_by_AxulArt/Beach-and-caves-tileset_ALL_by_AxulArt.png<>uid://baniuqafgdfmj::::res://art/AxulArt's Beach-and-caves-tileset_by_AxulArt/Beach-and-caves-tileset_by_AxulArt.png
+world.tscn::PackedScene::6005116972793145044::1736978971::0::1::::<><>::uid://cky88dtpg65i3::::res://tileset.tres<>uid://6m588guu0nmb::::res://player.tscn<>uid://b52nfh0e8erxi::::res://art/AxulArt's_BasicPlains-Tileset_ver.2_by_AxulArt/BasicPlains-tileset-Ver.2_by_AxulArt.png
+::res://art/::1736076829
+::res://art/AxulArt's Beach-and-caves-tileset_by_AxulArt/::1735856669
+Beach-and-caves-tileset_ALL_by_AxulArt.png::CompressedTexture2D::704258396330788475::1698497764::1736979268::1::::<><>::
+Beach-and-caves-tileset_by_AxulArt.png::CompressedTexture2D::2413779886925029325::1698497784::1736979268::1::::<><>::
+license.txt::TextFile::-1::1700328304::0::1::::<><>::
+::res://art/AxulArt's_BasicPlains-Tileset_ver.2_by_AxulArt/::1735856669
+BasicPlains-tileset-Ver.2-ALL_by_AxulArt.png::CompressedTexture2D::2711638060781551045::1698497386::1736979268::1::::<><>::
+BasicPlains-tileset-Ver.2_by_AxulArt.png::CompressedTexture2D::4548622848578754890::1698497386::1736979268::1::::<><>::
+license.txt::TextFile::-1::1700327904::0::1::::<><>::
+::res://art/Pixelart-Icons-16x16px_by_AxulArt/::1736076838
+Icon-Set-RPG_by_AxulArt.png::CompressedTexture2D::2703950980544984584::1700329590::1736979268::1::::<><>::
+license.txt::TextFile::-1::1700329610::0::1::::<><>::
+::res://art/Small-8-Direction-Characters_by_AxulArt/::1735856669
+license.txt::TextFile::-1::1700330070::0::1::::<><>::
+Small-8-Direction-Characters_by_AxulArt.png::CompressedTexture2D::2113769235844705575::1700330446::1736979268::1::::<><>::
