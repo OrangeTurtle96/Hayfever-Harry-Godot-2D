@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8a0h0sff2wc1"]
+
+[ext_resource type="Script" path="res://pollen.gd" id="1_yxcjx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ddp8g"]
+
+[node name="RigidBody2D" type="RigidBody2D"]
+collision_mask = 31
+gravity_scale = 0.0
+script = ExtResource("1_yxcjx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_ddp8g")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 50
+emission_shape = 1
+emission_sphere_radius = 8.0
+gravity = Vector2(0, 0)
+angular_velocity_min = -720.0
+angular_velocity_max = 698.77
+linear_accel_min = -60.05
+linear_accel_max = -60.05
+radial_accel_max = 34.85
+scale_amount_max = 3.0
+color = Color(1, 1, 0.470588, 1)
+
+[node name="PollenTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true

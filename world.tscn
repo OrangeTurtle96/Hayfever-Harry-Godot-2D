@@ -97,3 +97,4 @@ position = Vector2(137, 130)
 collision_layer = 15
 collision_mask = 15
 movement_speed = 80
+attack_speed = 100

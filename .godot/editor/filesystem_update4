@@ -2,3 +2,6 @@ res://world.tscn
 res://tileset.tres
 res://player.tscn
 res://attack.tscn
+res://pollen.tscn
+res://player.gd
+res://pollen.gd

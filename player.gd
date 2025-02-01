@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
 const SWORD_ATTACK = preload("attack.tscn")
+const POLLEN_ATTACK = preload("pollen.tscn")
 
 @export var movement_speed = 40
+@export var attack_speed = 50
 @export var attack_offset = 10
 @export var max_health = 5
 @export var defence = 1
@@ -10,7 +12,7 @@ const SWORD_ATTACK = preload("attack.tscn")
 @export var damage_multiplier = 1
 var player_health
 var input_direction = Vector2.ZERO
-var attack_direction = Vector2.ZERO
+var attack_direction = Vector2.DOWN
 
 
 func _ready() -> void:
@@ -28,7 +30,9 @@ func _process(delta: float) -> void:
 		velocity = input_direction * movement_speed	
 		#Player Attack Action
 		if Input.is_action_pressed("attack"):
-			_swordAttack()		
+			_attackHandler(0)
+		elif Input.is_action_pressed("interact")	:
+			_attackHandler(1)
 		#Player Collisions
 		var collision_info = move_and_collide(velocity * delta)
 		if collision_info:
@@ -37,25 +41,34 @@ func _process(delta: float) -> void:
 		_animationHandler()
 
 
-func _swordAttack() -> void:
+func _attackHandler(attack_type) -> void:
 	velocity = Vector2.ZERO #Stops player movement
 	$"Attack Timer".start()
-	var sword_attack = SWORD_ATTACK.instantiate()
-	sword_attack.position = self.global_position + attack_direction * attack_offset
-	sword_attack.rotation = self.global_position.direction_to(sword_attack.position).angle()	
+	var attack;
+	var isSprite = true #Stops trying to change properties of other elements which are only for sprites
+	if attack_type == 1:
+		isSprite = false
+		attack = POLLEN_ATTACK.instantiate()
+		attack.linear_velocity = attack_direction * attack_speed
+	else:
+		attack = SWORD_ATTACK.instantiate()
+
+
+	attack.position = self.global_position + attack_direction * attack_offset
+	attack.rotation = self.global_position.direction_to(attack.position).angle()	
 	#Place sword above player when facing down and begind when facing up (assumes player at level 1)
 	if attack_direction.y >= 0:
-		sword_attack.z_index = 1
+		attack.z_index = 1
 	else:
-		sword_attack.position += Vector2(0,attack_offset/2)
-		sword_attack.z_index = 0
-	if attack_direction.x < 0:
-		sword_attack.flip_v = true
-	else:
-		sword_attack.flip_v = false
+		attack.position += Vector2(0,attack_offset/2)
+		attack.z_index = 0
+	if isSprite == true:
+		if attack_direction.x < 0:
+			attack.flip_v = true
+		else:
+			attack.flip_v = false
 	#After setting properties of sword attack above it is spawned in...
-	get_parent().add_child(sword_attack)
-
+	get_parent().add_child(attack)
 
 func _animationHandler() -> void:
 	if input_direction.y < 0 :
